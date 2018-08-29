@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="brainapps.com.br.eletroos.Cadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    >
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/tf_nome"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/tf_senha"
+        android:layout_marginTop="156dp"
+        android:background="@color/colorAccent"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/tf_sobrenome"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/tf_nome"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="224dp"
+        android:background="@color/colorAccent"
+        android:hint="Sobrenome"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/tf_email"
+        android:layout_width="182dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="115dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/colorAccent"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/tf_senha"
+        android:layout_width="182dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/tf_email"
+        android:layout_marginBottom="179dp"
+        android:background="@color/colorAccent"
+        android:hint="E-mail"
+        android:inputType="textWebEmailAddress"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp" />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_teste"
+        style="@style/ElevatedButton"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:gravity="center"
+        android:text="CADASTRAR"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textSobrenome"
+        android:layout_alignTop="@+id/tf_nome"
+        android:text="Nome"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textSobrenome"
+        android:layout_width="121dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/tf_sobrenome"
+        android:layout_marginStart="18dp"
+        android:text="Sobrenome"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="121dp"
+        android:layout_height="37dp"
+        android:layout_alignStart="@+id/textNome"
+        android:layout_alignTop="@+id/tf_senha"
+        android:text="E-mail"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/textSenha"
+        android:layout_width="121dp"
+        android:layout_height="37dp"
+        android:layout_alignStart="@+id/textNome"
+        android:layout_alignTop="@+id/tf_email"
+        android:text="Senha"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+
+
+
+</RelativeLayout>

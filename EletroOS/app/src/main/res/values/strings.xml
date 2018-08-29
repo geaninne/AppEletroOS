@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EletroOS</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_senha">Senha</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "301575193482",
+    "firebase_url": "https://eletroos-66e63.firebaseio.com",
+    "project_id": "eletroos-66e63",
+    "storage_bucket": "eletroos-66e63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301575193482:android:70e3c4b15aa7079a",
+        "android_client_info": {
+          "package_name": "brainapps.com.br.eletroos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301575193482-9q3c0c9r3v5modbj417qoj6ck660hlt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "brainapps.com.br.eletroos",
+            "certificate_hash": "4101cbe4afcfa76f7e69d989fcfe2ed8a4d6da35"
+          }
+        },
+        {
+          "client_id": "301575193482-n2o5329qaqlor0dlgqa4pi6sgth3o7bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANFsoWlEzJascGhtrZPBHCnt47gLrXA4U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301575193482-n2o5329qaqlor0dlgqa4pi6sgth3o7bp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

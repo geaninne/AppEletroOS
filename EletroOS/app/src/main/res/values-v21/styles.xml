@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="SuperMaterialTheme" parent="AppTheme">
+
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="ElevatedButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="backgroundTint">@color/btnColor</item>
+    </style>
+</resources>
