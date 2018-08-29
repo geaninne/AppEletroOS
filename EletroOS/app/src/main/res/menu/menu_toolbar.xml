@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Minhas OS"
+            android:id="@+id/os_menu"
+            app:showAsAction="always"
+            android:icon="@drawable/outline_table_chart_white_24dp"
+            />
+
+
+        <item android:title="Despesas"
+            android:id="@+id/despesas_menu"
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_attach_money_white_24dp"
+            />
+
+        <item android:title="Clientes"
+            android:id="@+id/clientes_menu"
+            />
+
+        <item android:title="Materiais"
+            android:id="@+id/materiais_menu"
+            android:icon="@mipmap/materiaiss"/>
+
+
+    </group>
+
+    <item android:title="Outros"
+        android:id="@+id/submenu_outros"
+        android:icon="@mipmap/outros">
+        <menu>
+            <item android:title="Configurações"
+                android:id="@+id/submenu_config"
+                android:icon="@mipmap/configg"/>
+
+            <item android:title="Sobre"
+                android:id="@+id/submenu_sobre"/>
+        </menu>
+    </item>
+
+
+
+
+
+
+
+
+</menu>
