@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "301575193482-9q3c0c9r3v5modbj417qoj6ck660hlt9.apps.googleusercontent.com",
+          "client_id": "301575193482-hkbs8gu20lrop1n3pvg1309kpqhnit5l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "brainapps.com.br.eletroos",
-            "certificate_hash": "4101cbe4afcfa76f7e69d989fcfe2ed8a4d6da35"
+            "certificate_hash": "37c37b09131c516447b858e218651b1e574dbbf9"
           }
         },
         {
