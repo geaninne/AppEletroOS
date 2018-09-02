@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
+import brainapps.com.br.eletroos.Model.M_Cadastrar;
+import brainapps.com.br.eletroos.Model.M_Login;
 import brainapps.com.br.eletroos.Model.Usuario;
 import brainapps.com.br.eletroos.config.ConfiguracaoFirebase;
 
@@ -28,8 +30,8 @@ public class Cadastro extends AppCompatActivity {
     private AppCompatEditText senha;
     private Usuario usuario;
 
-    private FirebaseAuth autenticacao;
 
+    private M_Cadastrar MCadastrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,51 +53,16 @@ public class Cadastro extends AppCompatActivity {
                 usuario.setSobrenome(sobrenome.getText().toString());
                 usuario.setEmail(email.getText().toString());
                 usuario.setSenha(senha.getText().toString());
-                cadastrarUsuario();
-
-            }
-        });
-
-    }
-
-    private void cadastrarUsuario() {
-        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
-        autenticacao.createUserWithEmailAndPassword(
-                usuario.getEmail(),
-                usuario.getSenha()
-        ).addOnCompleteListener(Cadastro.this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if( task.isSuccessful() ){
-                    Toast.makeText(Cadastro.this, "Sucesso ao cadastrar usuário", Toast.LENGTH_LONG).show();
-
-                    FirebaseUser usuarioFirebase = task.getResult().getUser();
-                    usuario.setId( usuarioFirebase.getUid() );
-                    usuario.salvarUsuario();
-
-                    autenticacao.signOut(); //ao cadastrar automaticamente fica logado, logo deve deslogar ele para ele logar novamente
+                MCadastrar = new M_Cadastrar();
+                if( MCadastrar.cadastrarUsuario(usuario, getApplicationContext())){
                     finish();
-                }else
-                {
-                    String erroExececao = "";
-                    try{
-                        throw task.getException();
-
-                    } catch (FirebaseAuthWeakPasswordException e) {
-                        erroExececao = "Digite uma senha mais forte! 6 caracteres no mínimo.";
-                    } catch (FirebaseAuthInvalidCredentialsException e) {
-                        erroExececao = "O e-mail digitado é inválido, digite um novo e-mail.";
-                    }catch (FirebaseAuthUserCollisionException e) {
-                        erroExececao = "O e-mail digitado é já está cadastrado, digite um novo e-mail.";
-                    }catch (Exception e) {
-                        erroExececao = "Erro ao cadastrar usuário.";
-                        e.printStackTrace();
-                    }
-                    Toast.makeText(Cadastro.this,"Erro:" + erroExececao, Toast.LENGTH_LONG).show();
-
                 }
+
             }
         });
+
     }
+
+
 
 }

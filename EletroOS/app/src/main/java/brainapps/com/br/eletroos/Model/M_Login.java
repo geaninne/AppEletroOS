@@ -1,5 +1,6 @@
 package brainapps.com.br.eletroos.Model;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
@@ -15,12 +16,12 @@ import com.google.firebase.database.DatabaseReference;
 import brainapps.com.br.eletroos.MainActivity;
 import brainapps.com.br.eletroos.config.ConfiguracaoFirebase;
 
-public class Login extends MainActivity {
+public class M_Login extends MainActivity {
     private DatabaseReference referenciaFirebase;
     private FirebaseAuth autenticacao;
+    public boolean confirma = false;
 
-
-    public void Validalogin(String email, String senha){
+    public boolean Validalogin(String email, String senha, final Context context){
 
         referenciaFirebase = ConfiguracaoFirebase.getFirebase();
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
@@ -28,13 +29,15 @@ public class Login extends MainActivity {
                 senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if( task.isSuccessful() ){
-                    String erroExececao = "";
 
-                    Toast.makeText(getApplicationContext(),"Erro:" + erroExececao, Toast.LENGTH_LONG).show();
+                if( task.isSuccessful() ){
+                    String erroExececao = "Login Confirmado";
+
+                    Toast.makeText(context,"" + erroExececao, Toast.LENGTH_LONG).show();
+
                 }else
                 {
-                    String erroExececao = "";
+                    String  erroExececao = "";
                     try{
                         throw task.getException();
                     } catch (FirebaseAuthInvalidUserException e) {
@@ -45,14 +48,17 @@ public class Login extends MainActivity {
                         erroExececao = "Erro ao autenticar usuário.";
                         e.printStackTrace();
                     }
-                   Toast.makeText(getApplicationContext(),"Erro:" + erroExececao, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context,"Erro:" + erroExececao, Toast.LENGTH_LONG).show();
+
                 }
             }
         });
-
-
-
-
+        if(autenticacao.getUid() == null){
+            confirma = false;
+        }else{
+            confirma = true;
+        }
+        return confirma;
     }
 
 }

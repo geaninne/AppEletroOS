@@ -1,7 +1,6 @@
 package brainapps.com.br.eletroos;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,17 +9,8 @@ import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.database.DatabaseReference;
-
-import brainapps.com.br.eletroos.Model.Login;
+import brainapps.com.br.eletroos.Model.M_Login;
 import brainapps.com.br.eletroos.Model.Usuario;
-import brainapps.com.br.eletroos.config.ConfiguracaoFirebase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout textLayoutSenha;
 
     private Usuario usuario;
-    private Login login;
+    private M_Login MLogin;
 
 
 
@@ -62,14 +52,11 @@ public class MainActivity extends AppCompatActivity {
                     usuario = new Usuario();
                     usuario.setEmail(editTextEmail.getText().toString());
                     usuario.setSenha(editTextSenha.getText().toString());
-                    login = new Login();
+                    MLogin = new M_Login();
 
-                    login.Validalogin(usuario.getEmail(), usuario.getSenha());
-                    //telaInicial();
-
-
-
-
+                    if(MLogin.Validalogin(usuario.getEmail(), usuario.getSenha(), getApplicationContext())){
+                        telaInicial();
+                    }
 
                 };
             }
@@ -103,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void Mensagem (String mensagem){
-        Toast.makeText(MainActivity.this, "Erro: " + mensagem, Toast.LENGTH_LONG).show();
-    }
 
 
 
