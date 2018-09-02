@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
+
+import brainapps.com.br.eletroos.Model.M_Login;
+import brainapps.com.br.eletroos.Model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +23,18 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout textLayoutEmail;
     private TextInputLayout textLayoutSenha;
 
+    private Usuario usuario;
+    private M_Login MLogin;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.login);
+
+
 
         editTextEmail = (AppCompatEditText) findViewById(R.id.tf_email);
         editTextSenha = (AppCompatEditText) findViewById(R.id.tf_senha);
@@ -38,11 +49,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validateForm()){
+                    usuario = new Usuario();
+                    usuario.setEmail(editTextEmail.getText().toString());
+                    usuario.setSenha(editTextSenha.getText().toString());
+                    MLogin = new M_Login();
 
-                    telaInicial(view);
+                    if(MLogin.Validalogin(usuario.getEmail(), usuario.getSenha(), getApplicationContext())){
+                        telaInicial();
+                    }
 
                 };
-
             }
         });
 
@@ -65,13 +81,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void telaInicial(View view){
+    public void telaInicial(){
 
         Intent it = new Intent(MainActivity.this, Inicial.class);
 
         startActivity(it);
+        finish();
 
     }
+
 
 
 
@@ -95,4 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
+
 }
