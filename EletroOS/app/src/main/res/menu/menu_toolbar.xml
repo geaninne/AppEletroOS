@@ -19,8 +19,6 @@
 
         <item android:title="Clientes"
             android:id="@+id/clientes_menu"
-            android:icon="@mipmap/clientess"
-
             />
 
         <item android:title="Materiais"

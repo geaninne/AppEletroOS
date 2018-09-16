@@ -23,7 +23,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="ffffff" />
+                                                <entry key="color" value="fafafa" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,7 +35,18 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_queue_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,10 +56,11 @@
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="backgroundColor" value="000000" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
                                       <entry key="foregroundAssetType" value="CLIP_ART" />
-                                      <entry key="foregroundLayerName" value="addOSS" />
-                                      <entry key="outputName" value="addOS" />
+                                      <entry key="foregroundLayerName" value="perfill" />
+                                      <entry key="outputName" value="perfil" />
                                     </map>
                                   </option>
                                 </PersistentState>

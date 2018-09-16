@@ -1,12 +1,7 @@
 package brainapps.com.br.eletroos;
 
-import android.content.ClipData;
-import android.content.Intent;
 import android.graphics.drawable.DrawableWrapper;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,9 +14,7 @@ public class Inicial extends AppCompatActivity{
 
     private Toolbar toolbar;
 
-
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,67 +31,7 @@ public class Inicial extends AppCompatActivity{
         drawerLayout.addDrawerListener(toggle);
 
         toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.navView);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
-                        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-
-                    case R.id.os_menu:{
-                       // Toast.makeText(this,"Minhas OS", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-
-                    case R.id.despesas_menu:{
-                        //Toast.makeText(this,"Despesas", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-
-                    case R.id.clientes_menu:{
-                        Intent it = new Intent(Inicial.this, CadastroCliente.class);
-                        startActivity(it);
-
-                        //Toast.makeText(this,"Clientes", Toast.LENGTH_SHORT).show();
-                        //telaCadastroCliente();
-                        break;
-                    }
-
-                    case R.id.materiais_menu:{
-                        //Toast.makeText(this,"Materiais", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-
-                    case R.id.submenu_config:{
-                        //Toast.makeText(this,"Configurações", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-
-                    case R.id.submenu_sobre:{
-                        //Toast.makeText(this,"Sobre", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                }
-
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-
-            }
-        });
     }
-
-    @Override
-    public void onBackPressed() {
-
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }else {
-            super.onBackPressed();
-        }
-    }
-
-
-
 
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu){
